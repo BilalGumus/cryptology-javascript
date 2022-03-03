@@ -1,5 +1,5 @@
 import React from 'react'
-import { Heading, Text, Stack, Button, HStack } from '@chakra-ui/react'
+import { Heading, Text, Stack, Button, Flex} from '@chakra-ui/react'
 import { GitHubIcon } from '../assets/icons/icons'
 import { Link } from 'react-router-dom'
 
@@ -27,7 +27,7 @@ function Home() {
                 <Heading as={'h3'} fontSize={'2xl'}>
                     Available Algorithms
                 </Heading>
-                <HStack spacing={"8"}>
+                <Flex justifyContent={"center"} flexWrap={"wrap"} gap={8}>
                     {algorithms.map((e) => {
                         return (
                             <Link key={e.value} to={e.value}>
@@ -37,7 +37,7 @@ function Home() {
                             </Link>
                         )
                     })}
-                </HStack>
+                </Flex>
             </Stack>
         </>
     )

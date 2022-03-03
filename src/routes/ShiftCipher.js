@@ -58,6 +58,7 @@ function ShiftCipher() {
                     </Editable>
                 </GridItem>
             </Grid>
+            <Heading as={'h3'} fontSize={'2xl'}> Shift Result</Heading>
             <CustomSlider KEY={KEY} setKEY={setKEY} />
             <PreviewAlphabet alphabet={alphabet} convertedAlphabet={convertedAlphabet} />
         </Stack>

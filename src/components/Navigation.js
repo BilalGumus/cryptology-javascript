@@ -7,7 +7,7 @@ import Settings from './Settings'
 
 function Navigation() {
     return (
-        <Flex mt={"4"}>
+        <Flex mt={"4"} gap={2}>
             <Link to="/">
                 <IconButton aria-label='Home' variant='ghost' rounded={'full'} size={'lg'} icon={<HomeIcon boxSize={6} />} />
             </Link>

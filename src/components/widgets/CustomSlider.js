@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Slider, SliderTrack, SliderFilledTrack, SliderThumb, Stack } from '@chakra-ui/react'
+import { Box, Slider, SliderTrack, SliderFilledTrack, SliderThumb } from '@chakra-ui/react'
 
 function CustomSlider({ KEY, setKEY, isDisabled }) {
     return (

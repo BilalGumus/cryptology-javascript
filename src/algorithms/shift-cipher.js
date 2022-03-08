@@ -1,7 +1,7 @@
 let cipherText  = "";
 let decryptText  = "";
 
-function shiftEncrypt(alphabet, plainText, KEY) {
+function encryptShift(alphabet, plainText, KEY) {
     cipherText = plainText.split("").map((element) => {
         let cipherIndex = alphabet.indexOf(element) + KEY;
         cipherIndex %= 29;
@@ -12,7 +12,7 @@ function shiftEncrypt(alphabet, plainText, KEY) {
     return cipherText;
 }
 
-function shiftDecrypt(alphabet, cipherText, KEY) {
+function decryptShift(alphabet, cipherText, KEY) {
     decryptText = cipherText.split("").map((element) => {
         let decryptIndex = alphabet.indexOf(element) - KEY;
         decryptIndex = Math.abs(decryptIndex % 29);
@@ -24,7 +24,7 @@ function shiftDecrypt(alphabet, cipherText, KEY) {
 }
 
 function cipherAlphabet(alphabet, KEY) {
-    return shiftEncrypt(alphabet, alphabet.join(""), KEY);
+    return encryptShift(alphabet, alphabet.join(""), KEY);
 }
 
-export { shiftEncrypt, shiftDecrypt, cipherAlphabet }
+export { encryptShift, decryptShift, cipherAlphabet }

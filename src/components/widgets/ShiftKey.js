@@ -2,8 +2,8 @@ import React from 'react'
 import { Input, IconButton, Text, HStack, VStack, useNumberInput } from '@chakra-ui/react'
 import { ChevronDownIcon, ChevronUpIcon } from '../../assets/icons/icons'
 
-function ShiftKey({ KEY, setKEY, setInputFromPlain, isDisabled, text, step, defaultValue, min, max }) {
-    const keyChangeHandler = (valueAsString, valueAsNumber) => { setInputFromPlain(true); setKEY(valueAsNumber) };
+function ShiftKey({ KEY, setKEY, isDisabled, text, step, defaultValue, min, max }) {
+    const keyChangeHandler = (valueAsString, valueAsNumber) => { setKEY(valueAsNumber) };
     const { getInputProps, getIncrementButtonProps, getDecrementButtonProps } = useNumberInput({ value: KEY, step: step, defaultValue: defaultValue, min: min, max: max, onChange: keyChangeHandler });
     const inc = getIncrementButtonProps()
     const dec = getDecrementButtonProps()

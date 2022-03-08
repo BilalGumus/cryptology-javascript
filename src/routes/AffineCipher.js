@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Heading, Text, Stack, VStack, Editable, EditableInput, EditablePreview, Grid, GridItem } from '@chakra-ui/react'
-import { affineEncrypt, affineDecrypt, cipherAlphabet } from '../algorithms/affinecipher';
+import { encryptAffine, decryptAffine, cipherAlphabet } from '../algorithms/affine-cipher';
 import ShiftKey from '../components/widgets/ShiftKey';
 import CustomSlider from '../components/widgets/CustomSlider';
 import PreviewAlphabet from '../components/widgets/PreviewAlphabet';
@@ -18,10 +18,10 @@ function AffineCipher() {
 
     if (inputFromPlain) {
         plainText = text;
-        cipherText = affineEncrypt(alphabet, plainText, KEY_1, KEY_2);
+        cipherText = encryptAffine(alphabet, plainText, KEY_1, KEY_2);
     } else {
         cipherText = text
-        plainText = affineDecrypt(alphabet, cipherText, KEY_1, KEY_2);
+        plainText = decryptAffine(alphabet, cipherText, KEY_1, KEY_2);
     }
 
     const handlePlainText = (e) => {
@@ -52,8 +52,8 @@ function AffineCipher() {
                 </GridItem>
                 <GridItem>
                     <VStack>
-                        <ShiftKey setInputFromPlain={setInputFromPlain} defaultValue={KEY_1} KEY={KEY_1} setKEY={setKEY1} />
-                        <ShiftKey setInputFromPlain={setInputFromPlain} defaultValue={KEY_2} KEY={KEY_2} setKEY={setKEY2} />
+                        <ShiftKey defaultValue={KEY_1} KEY={KEY_1} setKEY={setKEY1} />
+                        <ShiftKey defaultValue={KEY_2} KEY={KEY_2} setKEY={setKEY2} />
                     </VStack>
                 </GridItem>
                 <GridItem>

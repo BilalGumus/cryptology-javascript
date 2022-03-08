@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Heading, Text, Stack, Editable, EditableInput, EditablePreview, Grid, GridItem} from '@chakra-ui/react'
-import { cipherAlphabet, shiftDecrypt, shiftEncrypt } from '../algorithms/shiftcipher';
+import { cipherAlphabet, encryptShift, decryptShift } from '../algorithms/shift-cipher';
 import ShiftKey from '../components/widgets/ShiftKey';
 import CustomSlider from '../components/widgets/CustomSlider';
 import PreviewAlphabet from '../components/widgets/PreviewAlphabet';
@@ -16,10 +16,10 @@ function ShiftCipher() {
 
     if (inputFromPlain) {
         plainText = text;
-        cipherText = shiftEncrypt(alphabet, plainText, KEY);
+        cipherText = encryptShift(alphabet, plainText, KEY);
     } else {
         cipherText = text
-        plainText = shiftDecrypt(alphabet, cipherText, KEY)
+        plainText = decryptShift(alphabet, cipherText, KEY)
     }
 
     const handlePlainText = (e) => {
@@ -49,7 +49,7 @@ function ShiftCipher() {
                     </Editable>
                 </GridItem>
                 <GridItem>
-                    <ShiftKey setInputFromPlain={setInputFromPlain} defaultValue={KEY} KEY={KEY} setKEY={setKEY}/>
+                    <ShiftKey defaultValue={KEY} KEY={KEY} setKEY={setKEY}/>
                 </GridItem>
                 <GridItem>
                     <Editable value={cipherText} onChange={handleCipherText} placeholder='CIPHER TEXT' outline={"1px dashed"} outlineOffset={"-1px"} bg={"gray.50"} p={{ base: 5, md: 12 }} fontWeight={500} fontSize={"3xl"}>

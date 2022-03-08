@@ -1,7 +1,7 @@
 let cipherText = "";
 let decryptText = "";
 
-function affineEncrypt(alphabet, plainText, KEY_1, KEY_2) {
+function encryptAffine(alphabet, plainText, KEY_1, KEY_2) {
     cipherText = plainText.split("").map((element) => {
         let cipherIndex = (KEY_1 * alphabet.indexOf(element)) + KEY_2;
         cipherIndex %= 29;
@@ -12,7 +12,7 @@ function affineEncrypt(alphabet, plainText, KEY_1, KEY_2) {
     return cipherText;
 }
 
-function affineDecrypt(alphabet, cipherText, KEY_1, KEY_2) {
+function decryptAffine(alphabet, cipherText, KEY_1, KEY_2) {
     decryptText = cipherText.split("").map((element) => {
         let decryptIndex = (alphabet.indexOf(element) - KEY_2) * modInverse(KEY_1, 29);
         decryptIndex = Math.abs(decryptIndex % 29);
@@ -32,7 +32,7 @@ function modInverse(KEY_1, M) {
 }
 
 function cipherAlphabet(alphabet, KEY_1, KEY_2) {
-    return affineEncrypt(alphabet, alphabet.join(""), KEY_1, KEY_2);
+    return encryptAffine(alphabet, alphabet.join(""), KEY_1, KEY_2);
 }
 
-export { affineEncrypt, affineDecrypt, cipherAlphabet };
+export { encryptAffine, decryptAffine, cipherAlphabet };

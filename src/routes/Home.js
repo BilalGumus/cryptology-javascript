@@ -6,7 +6,10 @@ import { Link } from 'react-router-dom'
 const algorithms = [
     { value: "caesar-cipher", name: "Caesar Cipher" },
     { value: "shift-cipher", name: "Shift Cipher" },
-    { value: "affine-cipher", name: "Affine Cipher" }
+    { value: "affine-cipher", name: "Affine Cipher" },
+    { value: "mixed-alphabet-cipher", name: "Mixed Alphabet Cipher" },
+    { value: "permutation-cipher", name: "Permutation Cipher" },
+    { value: "route-cipher", name: "Route Cipher" }
 ];
 
 function Home() {

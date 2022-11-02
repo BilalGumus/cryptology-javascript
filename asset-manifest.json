@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/cryptology-javascript/static/css/main.31d6cfe0.css",
-    "main.js": "/cryptology-javascript/static/js/main.10f6508b.js",
+    "main.js": "/cryptology-javascript/static/js/main.ed71492e.js",
     "static/js/787.881dc482.chunk.js": "/cryptology-javascript/static/js/787.881dc482.chunk.js",
     "index.html": "/cryptology-javascript/index.html",
-    "main.10f6508b.js.map": "/cryptology-javascript/static/js/main.10f6508b.js.map",
+    "main.ed71492e.js.map": "/cryptology-javascript/static/js/main.ed71492e.js.map",
     "787.881dc482.chunk.js.map": "/cryptology-javascript/static/js/787.881dc482.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.31d6cfe0.css",
-    "static/js/main.10f6508b.js"
+    "static/js/main.ed71492e.js"
   ]
 }
